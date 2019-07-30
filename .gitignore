@@ -1,0 +1,6 @@
+/logs
+/logs/*.log
+build
+/klcms-web/src/main/resources/public
+/klcms-web/klcms.log.1
+/klcms-web/.settings/org.eclipse.core.resources.prefs

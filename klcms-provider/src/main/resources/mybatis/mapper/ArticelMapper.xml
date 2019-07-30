@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.klfront.klcms.dao.ArticleDao">
+
+	<select id="findByPage" resultType="Article">
+		select a.id,a.title,a.keyword,a.content,a.text,a.category_id,a.author,a.create_time,u.nickname as author_name from
+		article a
+		left join user u
+		on u.username = a.author
+		<where>
+			<if test="keyword != null and keyword != ''">
+				and (title LIKE CONCAT('%',#{keyword},'%') or keyword
+				LIKE CONCAT('%',#{keyword},'%'))
+			</if>
+
+			<if test="categoryId != null and categoryId != ''">
+				and category_id like concat(#{categoryId},'%')
+			</if>
+		</where>
+		order by create_time desc limit #{fromIndex},#{pageSize}
+	</select>
+
+	<select id="getRows" resultType="Integer">
+		select count(*) from article
+		<where>
+			<if test="keyword != null and keyword != ''">
+				and (title LIKE CONCAT('%',#{keyword},'%') or keyword
+				LIKE CONCAT('%',#{keyword},'%'))
+			</if>
+
+			<if test="categoryId != null and categoryId != ''">
+				and category_id like concat(#{categoryId},'%')
+			</if>
+		</where>
+	</select>
+
+	<!-- select * 时系统需要先在系统表格中，遍历表格所有列名称。当然如果表字段不多，这个影响很小，可以忽略。 业务不需要所有字段时，写明需要的部分字段自然比查询所有字段快一些 -->
+	<select id="findById" resultType="Article">
+		select
+		a.id,a.title,a.keyword,a.content,a.text,a.category_id,a.author,a.create_time,u.nickname as author_name from
+		article a
+		left join user u
+		on u.username = a.author	
+		where a.`id`=#{id}
+	</select>
+
+	<!-- keyProperty返回插入记录的主键，赋值给参数中的对象对应主键的属性 -->
+	<insert id="add" useGeneratedKeys="true" keyProperty="id"
+		parameterType="Article">
+		insert into
+		article(title,keyword,content,text,category_id,author,create_time)
+		values(#{title},#{keyword},#{content},#{text},#{categoryId},#{author}, now())
+	</insert>
+
+	<!-- <update id="update" parameterType="Article"> update article set title 
+		= #{title},content=#{content},text=#{text},category_id=#{categoryId},create_time=#{createTime} 
+		where id=#{id} </update> -->
+	<update id="update" parameterType="Article">
+		update article
+		<set>
+			text=#{text},category_id=#{categoryId},
+			<if test="title !=null and title != ''">
+				title =#{title},
+			</if>
+			<if test="keyword !=null and keyword != ''">
+				keyword =#{keyword},
+			</if>
+			<if test="content !=null and content != ''">
+				content=#{content},
+			</if>
+			<if test="createTime !=null">
+				create_time=#{createTime}
+			</if>
+		</set>
+
+		where id=#{id}
+	</update>
+
+	<delete id="deleteById">
+		delete from article where
+		`id`=#{id}
+	</delete>
+</mapper>
+ 
+

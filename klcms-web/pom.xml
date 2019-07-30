@@ -1,0 +1,117 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.klfront.klcms</groupId>
+		<artifactId>klcms-parent</artifactId>
+		<version>1.0.0.RELEASE</version>
+	</parent>
+	<artifactId>klcms-web</artifactId>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<thymeleaf.version>3.0.9.RELEASE</thymeleaf.version>
+		<thymeleaf-layout-dialect.version>2.2.2</thymeleaf-layout-dialect.version>
+	</properties>
+
+	<dependencies>
+		<!-- 引入web相关的包 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<!-- 引入模板引擎 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-freemarker</artifactId>
+		</dependency>
+		<!-- 引入自己定义的服务提供者工程 -->
+		<dependency>
+			<groupId>com.klfront.klcms</groupId>
+			<artifactId>klcms-provider</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<!-- 以webjar方式引入jquery、bootstrap等前端资源 -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>jquery</artifactId>
+			<version>3.3.1</version>
+		</dependency>
+		<!-- <dependency> <groupId>org.webjars</groupId> <artifactId>bootstrap</artifactId> 
+			<version>4.3.1</version> </dependency> -->
+
+		<!-- 热部署 修改后立即生效 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>springloaded</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+		</dependency>
+
+
+		<!--json转换成对象的包 支持以实体对象为参数接收前端提交的json数据 不用配置也OK，因为在spring-boot-starter-web中已经配置 -->
+		<!--<dependency> <groupId>com.fasterxml.jackson.core</groupId> <artifactId>jackson-databind</artifactId> 
+			</dependency> -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.1.39</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<finalName>klcms</finalName>
+		<!-- 配置静态资源打包的目录配置 -->
+		<resources>
+			<resource>
+				<!-- Maven默认就是从src/main/resources目录下查找资源，可以修改 -->
+				<!--<directory>/src/main/resources</directory> 前面加斜线导致所有静态资源加载失败-->
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+			
+		</resources>
+		<plugins>
+			<!-- 配置静态资源打包的插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<!-- 模板数据绑定的界定符 -->
+					<delimiters>
+						<delimit>$</delimit>
+					</delimiters>
+					
+					<nonFilteredFileExtensions>
+						<!-- 静态资源支持ico文件 -->
+					    <nonFilteredFileExtension>ico</nonFilteredFileExtension>
+					    <!-- 静态资源支持字体图标文件 -->
+						<nonFilteredFileExtension>woff</nonFilteredFileExtension>
+						<nonFilteredFileExtension>woff2</nonFilteredFileExtension>
+						<nonFilteredFileExtension>eot</nonFilteredFileExtension>
+						<nonFilteredFileExtension>ttf</nonFilteredFileExtension>
+						<nonFilteredFileExtension>svg</nonFilteredFileExtension>
+					</nonFilteredFileExtensions>
+				</configuration>
+			</plugin>
+
+			<!--web工程标配：添加spring-boot-maven-plugin插件之后，当运行“mvn package”进行打包时， 会打包成一个可以直接运行的 
+				JAR 文件，使用“java -jar”命令就可以直接运行 -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+
+		</plugins>
+	</build>
+</project>

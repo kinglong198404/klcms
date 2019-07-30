@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.klfront.klcms.dao.CategoryDao">
+
+	<insert id="add" parameterType="Category">
+		insert into
+		category(id,pid,name,remark)
+		values(#{id},#{pid},#{name},#{remark})
+	</insert>
+	<update id="update" parameterType="Category">
+		update category
+		<set>
+			pid=#{pid},name=#{name},remark=#{remark},
+			<if test="icon !=null and icon != ''">
+				icon =#{icon},
+			</if>
+		</set>
+		
+		where id=#{id}
+	</update>
+	<delete id="deleteById" >
+		delete from category where
+		`id`=#{id}
+	</delete>
+	<select id="findById" resultType="Category">
+		select id,pid,icon,name,remark,
+		(select name from category where id = (SELECT pid from category where id=#{id})) as parentName  
+		from category as c where id = #{id}
+	</select>
+	<select id="findByParentId" resultType="Category">
+		select id,pid,name,remark from category where pid = #{pid}  ORDER BY id
+	</select>
+	<select id="findAll" resultType="Category">
+		select id,pid,name,remark from category  ORDER BY id
+	</select>
+		<select id="getRootList" resultType="Category">
+		select id,pid,name,icon,remark from category where LENGTH(pid)=2  ORDER BY sort
+	</select>
+</mapper>
+ 
+
