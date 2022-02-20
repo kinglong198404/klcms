@@ -248,8 +248,7 @@ public class ArticleController {
 
 			Calendar cal = Calendar.getInstance();
 			String folderPath = rootFolderPath + "/upload/images" + File.separator + cal.get(Calendar.YEAR)
-					+ File.separator + cal.get(Calendar.MONTH + 1) + File.separator + cal.get(Calendar.DATE);
-
+					+ File.separator + (cal.get(Calendar.MONTH)+1) + File.separator + cal.get(Calendar.DATE);
 			String saveFilePath = FileUtil.saveFile(file, folderPath);
 			String relativePath = saveFilePath.replace(rootFolderPath, "");
 			response.getWriter().write("<script>window.parent.CKEDITOR.tools.callFunction(" + CKEditorFuncNum + ", \""
