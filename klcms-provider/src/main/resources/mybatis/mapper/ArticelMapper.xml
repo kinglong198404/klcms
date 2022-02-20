@@ -19,7 +19,8 @@
 				and category_id like concat(#{categoryId},'%')
 			</if>
 		</where>
-		order by create_time desc limit #{fromIndex},#{pageSize}
+		order by sort, create_time desc 
+		limit #{fromIndex},#{pageSize}
 	</select>
 
 	<select id="getRows" resultType="Integer">
