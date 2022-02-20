@@ -64,17 +64,13 @@
 					<div>技术网站导航</div>
 				</div>
 				<ul class="ulCategory">
-					<li><em>IDE、设计工具</em></li>
+					<li><em>IDE</em></li>
 					<li><a href='https://www.jetbrains.com/idea/' target='_blank'>IDEA</a></li>
 					<li><a href='https://www.eclipse.org/' target='_blank'>Eclipse</a></li>
 					<li><a href='https://developer.android.com/studio/index.html'
 						target='_blank'>Android Studio</a></li>
 					<li><a href='http://maven.apache.org' target='_blank'>Maven官网</a></li>
-					<li><a href='http://maven.apache.org/download.cgi'
-						target='_blank'>Maven下载</a></li>
-					<li><a href='http://www.sparxsystems.com/' target='_blank'>Enterprise
-							Architect</a></li>
-
+			
 
 					<li><em>前端</em></li>
 					<li><a href='http://www.cnblogs.com/ghostwu/p/7499237.html'
@@ -84,19 +80,6 @@
 					<li><a href='https://angular.io/' target='_blank'>Angular</a></li>
 					<li><a href='https://getbootstrap.com/' target='_blank'>Bootstrap</a></li>
 					<li><a href='https://element.eleme.cn/#/zh-CN' target='_blank'>Element-UI</a></li>
-					<li><a href='https://mint-ui.github.io/#!/zh-cn'
-						target='_blank'>Mint-UI</a></li>
-					<li><a href='https://www.highcharts.com' target='_blank'>Highcharts</a></li>
-					<li><a href='https://echarts.baidu.com/' target='_blank'>Echarts</a></li>
-					<li><a
-						href='http://lbsyun.baidu.com/index.php?title=jspopular3.0'
-						target='_blank'>百度地图（Web）</a></li>
-
-					<li><em>移动端</em></li>
-					<li><a
-						href='https://developers.weixin.qq.com/miniprogram/dev/framework/'
-						target='_blank'>微信小程序</a></li>
-					<li><a href='https://github.com/yangjie10930' target='_blank'>Android资源</a></li>
 
 					<li><em>后端</em></li>
 					<li><a href='https://spring.io/projects' target='_blank'>Spring</a></li>
@@ -111,10 +94,6 @@
 					<li><a href='https://developer.emqx.io/docs/broker/v3/cn/'
 						target='_blank'>EMQ</a></li>
 
-					<li><em>行业领域</em></li>
-					<li><a href='http://wiki.jabbercn.org/' target='_blank'>XMPP中文网</a></li>
-					<li><a href='http://mina.apache.org/vysper-project/'
-						target='_blank'>vysper</a></li>
 
 				</ul>
 			</div>
@@ -174,5 +153,3 @@
 </body>
 </html>
 </#macro>
-
-
