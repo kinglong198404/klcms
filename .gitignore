@@ -4,3 +4,4 @@ build
 /klcms-web/src/main/resources/public
 /klcms-web/klcms.log.1
 /klcms-web/.settings/org.eclipse.core.resources.prefs
+/klcms-provider/src/main/resources/application.yml.back

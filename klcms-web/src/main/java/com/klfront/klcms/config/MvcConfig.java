@@ -28,9 +28,9 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
 	}
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        //浏览器发送 /login 请求来到 login.ftl
+        //浏览器发送 /login 请求转到 login.ftl
         registry.addViewController("/login").setViewName("login");
-        registry.addViewController("/admin").setViewName("admin");
+        //registry.addViewController("/mobile").setViewName("mobile");
         registry.addViewController("/test").setViewName("test");
     }
 
@@ -47,7 +47,7 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
             	//排除对主页、文章详情页和登录相关页面的拦截
                 registry.addInterceptor(new LoginHandlerInterceptor())
                 		.addPathPatterns("/**")
-                        .excludePathPatterns("/","/test","../shared/layout.ftl","/**.ico","/index.html","/admin.html","/admin","/article/item/*","/item/*","/login","/user/login","/error");
+                        .excludePathPatterns("/","/test","../shared/layout.ftl","/**.ico","/index.html","/mobile","/mobile/","/mobile/item/*","/article/item/*","/item/*","/login","/user/login","/error");
             }
         };
         return adapter;

@@ -95,6 +95,7 @@ public class ArticleController {
 				item.setText(text);
 			}
 		});
+		
 		Integer pageCount = service.getPageCount(category, keyword, pageSize);
 		List<Category> categories = catService.findAll();
 
@@ -118,8 +119,8 @@ public class ArticleController {
 		return "index";
 	}
 
-	@RequestMapping("/admin.html")
-	public String admin(ModelMap map, @RequestParam(value = "category", required = false) String category,
+	@RequestMapping("/mobile")
+	public String mobile(ModelMap map, @RequestParam(value = "category", required = false) String category,
 			@RequestParam(value = "keyword", required = false) String keyword,
 			@RequestParam(value = "page", required = false) Integer page) {
 		if (page == null) {
@@ -156,7 +157,7 @@ public class ArticleController {
 		map.put("pageCount", pageCount);
 		map.put("categories", categories);
 		map.put("websites", null);
-		return "admin";
+		return "mobile";
 	}
 
 	@RequestMapping("/item/{id}.html")
@@ -176,6 +177,16 @@ public class ArticleController {
 
 	@RequestMapping("/article/item/{id}.html")
 	public String articleItem(ModelMap map, @PathVariable("id") Long id) {
+		Article item = service.findById(id);
+		List<Category> categories = catService.findAll();
+		map.put("article", item);
+		map.put("categories", categories);
+		map.put("websites", null);
+		return "item";
+	}
+	
+	@RequestMapping("/mobile/item/{id}.html")
+	public String mobileArticleItem(ModelMap map, @PathVariable("id") Long id) {
 		Article item = service.findById(id);
 		List<Category> categories = catService.findAll();
 		map.put("article", item);
@@ -249,6 +260,7 @@ public class ArticleController {
 			Calendar cal = Calendar.getInstance();
 			String folderPath = rootFolderPath + "/upload/images" + File.separator + cal.get(Calendar.YEAR)
 					+ File.separator + (cal.get(Calendar.MONTH)+1) + File.separator + cal.get(Calendar.DATE);
+
 			String saveFilePath = FileUtil.saveFile(file, folderPath);
 			String relativePath = saveFilePath.replace(rootFolderPath, "");
 			response.getWriter().write("<script>window.parent.CKEDITOR.tools.callFunction(" + CKEditorFuncNum + ", \""

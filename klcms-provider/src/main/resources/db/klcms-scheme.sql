@@ -3,6 +3,7 @@ Navicat MySQL Data Transfer
 
 Source Server         : klfront
 Source Server Version : 50726
+Source Host           : www.klfront.com:3306
 Source Database       : klcms
 
 Target Server Type    : MYSQL

@@ -30,10 +30,10 @@
 		from category as c where id = #{id}
 	</select>
 	<select id="findByParentId" resultType="Category">
-		select id,pid,name,remark from category where pid = #{pid}  ORDER BY id
+		select id,pid,name,remark from category where pid = #{pid}  ORDER BY sort, id
 	</select>
 	<select id="findAll" resultType="Category">
-		select id,pid,name,remark from category  ORDER BY id
+		select id,pid,name,remark from category  ORDER BY sort, id
 	</select>
 		<select id="getRootList" resultType="Category">
 		select id,pid,name,icon,remark from category where LENGTH(pid)=2  ORDER BY sort
