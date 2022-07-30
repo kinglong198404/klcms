@@ -47,7 +47,6 @@ public class UrlEncodeUtil {
 			e.printStackTrace();
 		}
 		return input;
-
 	}
 
 	private static String getHex(byte buf[]) {
@@ -61,7 +60,6 @@ public class UrlEncodeUtil {
 			o.append(Long.toString(n, 16).toUpperCase());
 		}
 		return o.toString();
-
 	}
 
 	public static String decodeURIComponent(String encodedURI) {

@@ -6,9 +6,8 @@ body {
 	padding: 6px;
 	color: #212121 !important;
 	font-weight: normal;
-	/*font-family: "Î¢ÈíÑÅºÚ","ËÎÌå",'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;*/
 	font-family: crosoft YaHei, Source Han Sans SC, Noto Sans CJK SC,
-		WenQuanYi Micro Hei, sans-serif;
+		WenQuanYi Micro Hei, sans-serif !important;
 	letter-spacing: 0.05em !important;
 }
 
@@ -86,6 +85,7 @@ h4 {
 	margin-left: 1% !important;
 	width: 100%;
 	color: #2e92cf;
+	margin-top:12px;
 }
 
 .navbar-header a {
@@ -120,7 +120,7 @@ h4 {
 	padding-right: 1.5%;
 	padding-bottom: 1.6%;
 	font-family: Helvetica Neue, Helvetica, Arial, sans-serif !important;
-	/*background: #fafafa !important;*/
+	background: #fdfdfd !important;
 	border: 0.5px #ccc solid !important;
 }
 
@@ -226,19 +226,17 @@ ul, .left-side ul, .right-side ul {
 	overflow: hidden;
 	word-break: normal;
 	text-overflow: ellipsis;
-	font-family: "Î¢ÈíÑÅºÚ", "ËÎÌå", 'Segoe UI Light_', 'Open Sans Light', Verdana,
-		Arial, Helvetica, sans-serif;
+	font-family: crosoft YaHei, Source Han Sans SC, Noto Sans CJK SC,
+		WenQuanYi Micro Hei, sans-serif !important;
 	line-height: 185%;
 	letter-spacing: 0.02em;
 }
 
 /*text*/
-.article h2 {
-	background-color: cadetblue;
+.article h1,.article h2 {
 	padding-top: 12px;
 	padding-bottom: 12px;
-	padding-left: 5px;
-	color: white;
+	color:#333333;
 }
 
 
@@ -248,8 +246,7 @@ ul, .left-side ul, .right-side ul {
 
 .menu>a {
 	font-weight: 600;
-	color: #252525;
-	color: #ee7700;
+	color: #ee7700 !important;
 	font-size: 1.08em !important;
 	margin-bottom: 2px !important;
 }
@@ -259,21 +256,22 @@ ul, .left-side ul, .right-side ul {
 }
 
 .sub-menu>a {
-	color: #4f4f4f;
+	color: #4f4f4f !important;
 }
 
 .navbar-brand {
 	font-family: 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
-	color:#428bca;
+	font-weight: 500;
+	color:#2e92cf !important;
 }
 
 .ulCategory li em {
 	font-size: small;
-	font-weight: bold;
-	color: cadetblue;
-	line-height: 2em;
+	color: #3f3f3f;
+	line-height: 2.3em;
 	font-size: 1.1em;
 	font-style: normal;
+	color:#454545;
 }
 
 footer {
@@ -298,3 +296,4 @@ footer {
     font-size: 1.2rem;
     /*font-weight: 600;*/
 }
+

@@ -20,13 +20,13 @@
 			<div class="navbar-header float-left">
 				<div class="float-left" style="text-align: center;">
 					<img class="float-left" src="/images/logo_iblue.png"
-						style="width: 28px; height: 28px; margin-top: 8px" /> <a href="/"
+						style="width: 27px; height: 27px; margin-top: 8px" /> <a href="/"
 						class="navbar-brand">编程网</a>
 				</div>
 			</div>
 		</div>
 		<div class="float-left text-secondary"
-			style="margin: 15px 200px 0 20px; font-size: 0.9rem;">项目实战记录，问题排查汇总</div>
+			style="margin: 15px 200px 0 20px; font-size: 0.9rem;">编程笔记，实战记录，资源汇总</div>
 		<div class="float-right" style="margin: 15px 2% 0 20px;">
 			<#if article?exists && edit?exists> <a href="/">返回</a>
 			<#elseif article?exists> <a href="javascript:history.go(-1)">返回</a>
@@ -61,7 +61,7 @@
 			</div>
 			<div class="right-side">
 				<div class="side-title">
-					<div>技术网站导航</div>
+					<div>网站导航</div>
 				</div>
 				<ul class="ulCategory">
 					<li><em>IDE</em></li>
@@ -69,7 +69,7 @@
 					<li><a href='https://www.eclipse.org/' target='_blank'>Eclipse</a></li>
 					<li><a href='https://developer.android.com/studio/index.html'
 						target='_blank'>Android Studio</a></li>
-					<li><a href='http://maven.apache.org' target='_blank'>Maven官网</a></li>
+					<li><a href='http://maven.apache.org' target='_blank'>Maven</a></li>
 			
 
 					<li><em>前端</em></li>
@@ -77,8 +77,8 @@
 						target='_blank'>Webpack</a></li>
 					<li><a href='https://nodejs.org/en/' target='_blank'>Nodejs</a></li>
 					<li><a href='https://cn.vuejs.org/v2/api/' target='_blank'>Vue</a></li>
+					<li><a href='https://v3.cn.vuejs.org/' target='_blank'>Vue3</a></li>
 					<li><a href='https://angular.io/' target='_blank'>Angular</a></li>
-					<li><a href='https://getbootstrap.com/' target='_blank'>Bootstrap</a></li>
 					<li><a href='https://element.eleme.cn/#/zh-CN' target='_blank'>Element-UI</a></li>
 
 					<li><em>后端</em></li>
@@ -94,7 +94,10 @@
 					<li><a href='https://developer.emqx.io/docs/broker/v3/cn/'
 						target='_blank'>EMQ</a></li>
 
-
+					<li><em>其他</em></li>
+					<li><a href='https://new.shuge.org/' target='_blank'>书格</a></li>
+					<li><a href='https://www.zdic.net/' target='_blank'>汉典</a></li>
+					
 				</ul>
 			</div>
 		</div>

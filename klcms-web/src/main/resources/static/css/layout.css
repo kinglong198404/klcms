@@ -36,7 +36,7 @@
 
     .left-side {
         float: left !important;
-        width: 18%;
+        width: 20%;
         padding-left: 10px;
         padding-right: 10px;
         overflow-x: visible;
@@ -58,7 +58,7 @@
 
     .center-content {
         float: left;
-        width: 82%;
+        width: 80%;
     }
 }
 
@@ -71,18 +71,18 @@
 
     .left-side {
         float: left !important;
-        width: 20%;
+        width: 21%;
         padding-left: 10px;
         padding-right: 10px;
+    }
+    
+    .center-content {
+        float: left;
+        width: 79%;
     }
 
    .right-side {
         display: none;
-    }
-
-    .center-content {
-        float: left;
-        width: 80%;
     }
 }
 
@@ -95,14 +95,14 @@
 
     .left-side {
         float: left !important;
-        width: 15%;
+        width: 17%;
         padding-left: 10px;
         padding-right: 10px;
     }
 
     .center-content {
         float: left;
-        width: 65%;
+        width: 63%;
     }
 
       .right-side {
@@ -122,13 +122,13 @@
 
     .left-side {
         float: left !important;
-        width: 15%;
+        width: 17%;
     }
 
 
     .center-content {
         float: left;
-        width: 65%;
+        width: 63%;
     }
 
     .right-side {

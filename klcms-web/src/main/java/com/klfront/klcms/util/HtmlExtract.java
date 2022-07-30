@@ -22,12 +22,11 @@ public class HtmlExtract {
 
 	private String strHtml;
 
-    public HtmlExtract(String inStrHtml)
-    {
+    public HtmlExtract(String inStrHtml){
         strHtml = inStrHtml;
     }
-    public String extractText()
-    {
+    
+    public String extractText(){
     	String result = strHtml;
        
     	String regEx_comment = "<!--[^-]*-->";

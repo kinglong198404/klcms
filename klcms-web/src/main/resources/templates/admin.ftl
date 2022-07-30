@@ -44,7 +44,7 @@
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 		<!-- Logo -->
 		<img class="float-left" src="/images/logo_iblue.png"
-						style="width: 26px; height: 26px;" />
+						style="width: 27px; height: 27px; margin-top: 8px" />
 		<a class="navbar-brand mr-1" href="index.html">编程网</a>
 
 		<!-- 切换按钮：控制左侧菜单的显示和隐藏 -->

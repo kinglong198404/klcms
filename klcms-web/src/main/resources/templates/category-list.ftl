@@ -28,7 +28,7 @@
 			<div class="navbar-header">
 				<div class="float-left" style="text-align: center;">
 					<img class="float-left" src="/images/logo_iblue.png"
-						style="width: 28px; height: 28px; margin-top: 5px" /> <a href="/"
+						style="width: 27px; height: 27px; margin-top: 8px" /> <a href="/"
 						class="navbar-brand">编程网</a>
 				</div>
 				<div class="clearfix"></div>
