@@ -9,7 +9,7 @@
 }
 
 .center-content {
-	width: 80% !important;
+	width: 79% !important;
 }
 .right-side{
 	display:none !important;

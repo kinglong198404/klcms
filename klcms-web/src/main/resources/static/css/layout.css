@@ -5,7 +5,7 @@
     body {
         font-size: 101% !important;
         padding: 0 !important;
-        line-height: 1.75 !important;;
+        line-height: 1.8 !important;;
     }
 
     .left-side {
@@ -31,7 +31,7 @@
     /*在768和991像素之间的屏幕里,这里的样式才生效*/
     body {
         font-size: 100% !important;
-        line-height: 1.65 !important;;
+        line-height: 1.8 !important;;
     }
 
     .left-side {
@@ -66,7 +66,7 @@
     /*在992和1199像素之间的屏幕里,这里的样式才生效*/
     body {
         font-size: 101% !important;
-        line-height: 1.6 !important;;
+        line-height: 1.8 !important;;
     }
 
     .left-side {
@@ -90,7 +90,7 @@
     /*在大于1200像素的屏幕里,这里的样式才生效*/
     body {
         font-size: 102% !important;
-        line-height: 1.6 !important;;
+        line-height: 1.8 !important;;
     }
 
     .left-side {
@@ -117,7 +117,7 @@
     /*在大于1480像素的屏幕里,这里的样式才生效*/
     body {
         font-size: 103% !important;;
-        line-height: 1.55 !important;;
+        line-height: 1.85 !important;;
     }
 
     .left-side {
