@@ -73,10 +73,9 @@
 			
 
 					<li><em>前端</em></li>
-					<li><a href='http://www.cnblogs.com/ghostwu/p/7499237.html'
-						target='_blank'>Webpack</a></li>
+					<li><a href='http://www.cnblogs.com/ghostwu/p/7499237.html' target='_blank'>Webpack</a></li>
 					<li><a href='https://nodejs.org/en/' target='_blank'>Nodejs</a></li>
-					<li><a href='https://cn.vuejs.org/v2/api/' target='_blank'>Vue</a></li>
+					<li><a href='https://reactjs.org/' target='_blank'>React</a></li>
 					<li><a href='https://v3.cn.vuejs.org/' target='_blank'>Vue3</a></li>
 					<li><a href='https://angular.io/' target='_blank'>Angular</a></li>
 					<li><a href='https://element.eleme.cn/#/zh-CN' target='_blank'>Element-UI</a></li>

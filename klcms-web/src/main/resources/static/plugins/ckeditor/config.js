@@ -16,7 +16,8 @@ CKEDITOR.editorConfig = function( config )
     // Define changes to default configuration here. For example:
     config.uiColor = '#d1ecf1';
     // config.width = 500; //宽度
-    config.height = 280; //高度
+    // config.height = 280; //高度
+    config.height = 460; //高度
     
     config.entities = false;
 };
