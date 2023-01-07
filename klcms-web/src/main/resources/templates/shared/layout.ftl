@@ -7,12 +7,21 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0,maximum-scale=1,user-scalable=no">
-<title>i编程网</title>
+	
+<#if article?exists &&(article.keyword?exists)>
+	<meta name="keywords" content="${article.keyword}" />
+</#if>
+	
+<#if article?exists><title>${article.title}</title>
+<#else><title>i编程网</title>
+</#if>
+
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" href="/css/layout.css">
 <link rel="stylesheet" href="/css/theme.css">
 <link rel="stylesheet" href="/plugins/bootstrap/css/bootstrap.css" />
 <link rel="stylesheet" href="/plugins/fontawesome/css/all.min.css" />
+
 </head>
 <body>
 	<div class="navbar">
@@ -105,15 +114,10 @@
 		<footer>
 			Copyright &copy;2014-${.now?string["yyyy"]}, i编程网-iprogram.com.cn,
 			All Rights Reserved
-			<script type="text/javascript">
-				var cnzz_protocol = (("https:" == document.location.protocol) ? " https://"
-						: " http://");
-				document
-						.write(unescape("%3Cspan id='cnzz_stat_icon_1253705588'%3E%3C/span%3E%3Cscript src='"
-								+ cnzz_protocol
-								+ "s11.cnzz.com/z_stat.php%3Fid%3D1253705588%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+			<a target="_blank" title="51la网站统计" href="https://v6.51.la/land/JvvsShXVrUjLrDFy"><img src="https://sdk.51.la/icon/1-1.png"></a>
+			<script>
+			!function(p){"use strict";!function(t){var s=window,e=document,i=p,c="".concat("https:"===e.location.protocol?"https://":"http://","sdk.51.la/js-sdk-pro.min.js"),n=e.createElement("script"),r=e.getElementsByTagName("script")[0];n.type="text/javascript",n.setAttribute("charset","UTF-8"),n.async=!0,n.src=c,n.id="LA_COLLECT",i.d=n;var o=function(){s.LA.ids.push(i)};s.LA?s.LA.ids&&o():(s.LA=p,s.LA.ids=[],o()),r.parentNode.insertBefore(n,r)}()}({id:"JvvsShXVrUjLrDFy",ck:"JvvsShXVrUjLrDFy"});
 			</script>
-
 		</footer>
 
 	</div>

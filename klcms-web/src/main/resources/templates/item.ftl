@@ -3,9 +3,9 @@
  
     <!-- <body oncontextmenu=self.event.returnValue=false > -->
 	<div oncontextmenu="window.event.returnValue=false">
-				<h2>
-					<a href="#">${article.title}</a>
-				</h2>
+				<h1>
+					<a href="#" title="${article.title}">${article.title}</a>
+				</h1>
 				<div style="font-size: 0.9em; border-bottom: 0.5px solid #e8e5d8;"
 					class="padding5-bottom margin10-top margin15-bottom">
 					作者：${article.authorName!} &nbsp;&nbsp;
@@ -17,7 +17,9 @@
 					</#if>
 					</div>
 				<br />
-				<#if article.keyword?exists><div >关键词<em>${article.keyword!}</em></div></#if>
+				<#if article.keywordList?exists>
+					<div>关键词：<#list article.keywordList as kw><strong>${kw}</strong> &nbsp;</#list></div>
+				</#if>
 				<br />
 				<div id="divcontent" class="article">${article.content}</div>
 			</div>

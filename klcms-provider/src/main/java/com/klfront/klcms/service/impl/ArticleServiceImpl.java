@@ -1,5 +1,6 @@
 package com.klfront.klcms.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,8 @@ import org.springframework.stereotype.Service;
 import com.klfront.klcms.dao.ArticleDao;
 import com.klfront.klcms.entity.Article;
 import com.klfront.klcms.service.ArticleService;
+import com.klfront.klcms.util.HtmlUtils;
+import com.mysql.jdbc.StringUtils;
 
 /**
  * <p>
@@ -69,13 +72,38 @@ public class ArticleServiceImpl implements ArticleService {
 
 	@Override
 	public Article findById(Long id) {
-		return dao.findById(id);
+		Article item = dao.findById(id);
+		if(item.getKeyword()!=null) {
+			String regex = "，|,|、";
+			String[] arr = item.getKeyword().split(regex);
+			List<String> keywordList = new ArrayList<String>();
+			for(String k : arr) {
+				keywordList.add(k);
+			}
+			item.setKeywordList(keywordList);
+		}
+		return item;
 	}
 
 	@Override
 	public List<Article> findByPage(String category, String keyword, Integer pageIndex, Integer pageSize) {
 		Integer fromIndex = pageIndex * pageSize;
-		return dao.findByPage(category, keyword, fromIndex, pageSize);
+		List<Article> list = dao.findByPage(category, keyword, fromIndex, pageSize);
+		list.forEach(item -> {
+			String content = item.getContent();
+			String imgSrc = HtmlUtils.getFirstImgSrc(content);
+			item.setImgSrc(imgSrc);
+			if(!StringUtils.isNullOrEmpty(item.getKeyword())) {
+				String regex = "，|,|、";
+				String[] arr = item.getKeyword().split(regex);
+				List<String> keywordList = new ArrayList<String>();
+				for(String k : arr) {
+					keywordList.add(k);
+				}
+				item.setKeywordList(keywordList);
+			}
+		});
+		return list;
 	}
 
 	@Override

@@ -2,6 +2,7 @@ package com.klfront.klcms.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -50,4 +51,6 @@ public class Article implements Serializable {
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm")
 	private Date createTime;
 	private int pageView;
+	private String imgSrc;
+	private List<String> keywordList;
 }

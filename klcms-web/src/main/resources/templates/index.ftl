@@ -30,17 +30,22 @@
 					<#list articles as art>
 					<li>
 						<div class="article-item">
-							<h4 class="article-title">
-								<a href="./item/${art.id}.html">${art.title}</a>
-							</h4>
+							<h3 class="article-title">
+								<a href="./item/${art.id}.html" title="${art.title}">${art.title}</a>
+							</h3>
 							<!-- freemarker模板使用java.util.Date 报错 Can't convert the date-like value to string because it isn't 
 	 							 known if it's a date (no time part), time or date-time value		
 	 							  解决方案：前端使用<div >${art.createTime?string('yyyy-MM-dd HH:mm')}</div> -->
 							<!--<div >${art.createTime?datetime}</div>-->
 							<div>作者： ${art.authorName!} &nbsp; &nbsp; &nbsp; 发表时间：
 								${art.createTime?string('yyyy-MM-dd HH:mm')}</div>
-							<#if art.keyword?exists>
-							<div>关键词：${art.keyword!}</div>
+							
+							<#if art.keywordList?exists>
+							<div>关键词：<#list art.keywordList as kw><strong>${kw}</strong> &nbsp;</#list></div>
+							</#if>
+							
+							<#if art.imgSrc?exists>
+							<div><img style="max-width:100%;max-height:500px;margin-top:12px;margin-bottom:12px" src="${art.imgSrc}"></div>
 							</#if>
 							<div class="summary">${art.text}</div>
 						</div>

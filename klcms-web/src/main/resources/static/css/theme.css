@@ -38,7 +38,7 @@ h1 {
 	font-size: 1.46em !important;
 }
 
-h2>a {
+h1>a {
 	color: #2e92cf !important;
 	cursor: pointer;
 	font-style: normal;
@@ -49,16 +49,11 @@ h2>a {
 
 h2 {
 	font-size: 1.40em !important;
+	color: #2e92cf !important;
 }
 
 h3 {
 	font-size: 1.23em !important;
-}
-
-h4 {
-	font-size: 1.15em !important;
-	font-style: italic;
-	margin-bottom: 0.05em;
 }
 
 
