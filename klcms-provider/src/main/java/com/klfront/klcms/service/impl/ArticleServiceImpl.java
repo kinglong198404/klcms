@@ -88,6 +88,9 @@ public class ArticleServiceImpl implements ArticleService {
 	@Override
 	public List<Article> findByPage(String category, String keyword, Integer pageIndex, Integer pageSize) {
 		Integer fromIndex = pageIndex * pageSize;
+		if(fromIndex<0) {
+			fromIndex = 0;
+		}
 		List<Article> list = dao.findByPage(category, keyword, fromIndex, pageSize);
 		list.forEach(item -> {
 			String content = item.getContent();

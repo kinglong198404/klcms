@@ -12,7 +12,7 @@
 	<meta name="keywords" content="${article.keyword}" />
 </#if>
 	
-<#if article?exists><title>${article.title}</title>
+<#if article?exists &&(article.title?exists)><title>${article.title}</title>
 <#else><title>i编程网</title>
 </#if>
 
