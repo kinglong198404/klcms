@@ -86,12 +86,12 @@ public class ArticleServiceImpl implements ArticleService {
 	}
 
 	@Override
-	public List<Article> findByPage(String category, String keyword, Integer pageIndex, Integer pageSize) {
+	public List<Article> findByPage(String category, String keyword, Integer isSubject, Integer pageIndex, Integer pageSize) {
 		Integer fromIndex = pageIndex * pageSize;
 		if(fromIndex<0) {
 			fromIndex = 0;
 		}
-		List<Article> list = dao.findByPage(category, keyword, fromIndex, pageSize);
+		List<Article> list = dao.findByPage(category, keyword, isSubject, fromIndex, pageSize);
 		list.forEach(item -> {
 			String content = item.getContent();
 			String imgSrc = HtmlUtils.getFirstImgSrc(content);
@@ -110,8 +110,8 @@ public class ArticleServiceImpl implements ArticleService {
 	}
 
 	@Override
-	public Integer getPageCount(String category, String keyword, Integer pageSize) {
-		Integer rows = dao.getRows(category, keyword);
+	public Integer getPageCount(String category, String keyword, Integer isSubject, Integer pageSize) {
+		Integer rows = dao.getRows(category, keyword, isSubject);
 		if (rows % pageSize == 0) {
 			return rows / pageSize;
 		} else {

@@ -15,6 +15,17 @@
 								</button>
 							</div>
 						</div>
+						<div class="form-check" class="float-left">
+						<#if getSubject>
+						      <input class="form-check-input" checked type="checkbox" onclick="checkboxOnclick(this)"
+						  id="ck_subject" style="width:18px;height:18px;margin-top:8px" />
+						  <#else>
+						   <input class="form-check-input" type="checkbox" id="ck_subject" onclick="checkboxOnclick(this)"
+						  style="width:18px;height:18px;margin-top:8px" />
+                        </#if>
+						
+						  <label class="form-check-label" for="ck_subject" style="font-size:18px;margin-left:6px">专题文章</label>
+						</div>
 						<input id="category" type="hidden" value="${categoryId!}"
 				class="text-info border-bottom " />
 					</div>
@@ -61,37 +72,37 @@
 							<li
 					class="${(1 == page)?string('page-item disabled', 'page-item')}"><a
 					class="page-link"
-					href="/index.html?category=${categoryId!}&keyword=${encodeKeyword!}&page=${page-1}">上一页</a></li>
+					href="/index.html?category=${categoryId!}&keyword=${encodeKeyword!}&isSubject=${subjectValue}&page=${page-1}">上一页</a></li>
 
-							<#if (page lt 3 && (page+3) gt pageCount)> <#list
+							<#if (page lte 3 && (page+3) gt pageCount)> <#list
 					1..pageCount as i>
 							<li
 					class="${(i == page)?string('page-item active', 'page-item')}"><a
 					class="page-link"
-					href="/index.html?category=${categoryId!}&keyword=${encodeKeyword!}&page=${i}">${i}</a></li>
-							</#list> <#elseif (page lt 3)> <#list 1.. (page+3) as i>
+					href="/index.html?category=${categoryId!}&keyword=${encodeKeyword!}&isSubject=${subjectValue}&page=${i}">${i}</a></li>
+							</#list> <#elseif (page lte 3)> <#list 1.. (page+3) as i>
 							<li
 					class="${(i == page)?string('page-item active', 'page-item')}"><a
 					class="page-link"
-					href="/index.html?category=${categoryId!}&keyword=${encodeKeyword!}&page=${i}">${i}</a></li>
+					href="/index.html?category=${categoryId!}&keyword=${encodeKeyword!}&isSubject=${subjectValue}&page=${i}">${i}</a></li>
 							</#list> <#elseif (page+3) gt pageCount> <#list
 					(page-3)..pageCount as i>
 							<li
 					class="${(i == page)?string('page-item active', 'page-item')}"><a
 					class="page-link"
-					href="/index.html?category=${categoryId!}&keyword=${encodeKeyword!}&page=${i}">${i}</a></li>
+					href="/index.html?category=${categoryId!}&keyword=${encodeKeyword!}&isSubject=${subjectValue}&page=${i}">${i}</a></li>
 							</#list> <#else> <#list (page-3)..(page+3) as i>
 							<li
 					class="${(i == page)?string('page-item active', 'page-item')}"><a
 					class="page-link"
-					href="/index.html?category=${categoryId!}&keyword=${encodeKeyword!}&page=${i}">${i}</a></li>
+					href="/index.html?category=${categoryId!}&keyword=${encodeKeyword!}&isSubject=${subjectValue}&page=${i}">${i}</a></li>
 							</#list></#if>
 
 							<li class="page-item disabled"><span class="page-link">${page}/${pageCount}</span></li>
 							<li
 					class="${(pageCount == page)?string('page-item disabled', 'page-item')}"><a
 					class="page-link"
-					href="/index.html?category=${categoryId!}&keyword=${encodeKeyword!}&page=${page+1}">下一页</a></li>
+					href="/index.html?category=${categoryId!}&keyword=${encodeKeyword!}&isSubject=${subjectValue}&page=${page+1}">下一页</a></li>
 						</ul>
 					</nav>
 

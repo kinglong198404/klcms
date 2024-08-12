@@ -101,11 +101,12 @@
 						target='_blank'>RabbitMQ</a></li>
 					<li><a href='https://developer.emqx.io/docs/broker/v3/cn/'
 						target='_blank'>EMQ</a></li>
-
-					<li><em>其他</em></li>
-					<li><a href='https://new.shuge.org/' target='_blank'>书格</a></li>
-					<li><a href='https://www.zdic.net/' target='_blank'>汉典</a></li>
+					<li><a href='https://www.springcloud.cc/apache-kafka-zhcn.html' target='_blank'>kafka文档</a></li>
 					
+					<li><em>数据库</em></li>
+					<li><a href='https://www.redisio.com/Getting-started.html' target='_blank'>Redis中文文档</a></li>
+					<li><a href='https://www.mongodb.com/' target='_blank'>MonngoDB</a></li>
+
 				</ul>
 			</div>
 		</div>
@@ -125,8 +126,13 @@
 	<script src="/webjars/jquery/3.3.1/jquery.js"></script>
 	<script src="/plugins/bootstrap/js/bootstrap.js"></script>
 	<script type="text/javascript">
-		function searchArticles() {
+		function searchArticles(checkbox) {
 			var kw = $("#txt_kw").val();
+			var ck_Subject = $("#ck_subject").prop('checked');
+			if(checkbox){
+			   ck_Subject = checkbox.checked === true;
+			}
+			var is_subject = ck_Subject?1:0;
 			//encodeURIComponent方法在编码单个指请求参 数时是最常用的，它可以将参数中的中文、特殊字符进行转义，但不会影响整个URL。
 			//encodeURI会保留#等特殊字符，因此用来对参数编码，不能完全达到预期目标
 			kw = encodeURIComponent(kw);
@@ -138,7 +144,16 @@
 					url = url + "?keyword=" + kw;
 				}
 			}
-			location.href = url;
+			if (url.indexOf('?') > 0) {
+			    url = url + "&isSubject=" + is_subject;
+			}else {
+				url = url + "?isSubject=" + is_subject;
+			}
+			location.href = url
+		}
+		
+		function checkboxOnclick(checkbox){
+			searchArticles(checkbox);
 		}
 
 		function onEnter(e) {

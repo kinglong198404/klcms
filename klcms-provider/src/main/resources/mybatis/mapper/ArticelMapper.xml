@@ -14,7 +14,9 @@
 				and (title LIKE CONCAT('%',#{keyword},'%') or keyword
 				LIKE CONCAT('%',#{keyword},'%'))
 			</if>
-
+			<if test="isSubject == 1">
+				and is_subject = #{isSubject}
+			</if>
 			<if test="categoryId != null and categoryId != ''">
 				and category_id like concat(#{categoryId},'%')
 			</if>
@@ -30,7 +32,9 @@
 				and (title LIKE CONCAT('%',#{keyword},'%') or keyword
 				LIKE CONCAT('%',#{keyword},'%'))
 			</if>
-
+			<if test="isSubject == 1">
+				and is_subject = #{isSubject}
+			</if>
 			<if test="categoryId != null and categoryId != ''">
 				and category_id like concat(#{categoryId},'%')
 			</if>
@@ -40,7 +44,7 @@
 	<!-- select * 时系统需要先在系统表格中，遍历表格所有列名称。当然如果表字段不多，这个影响很小，可以忽略。 业务不需要所有字段时，写明需要的部分字段自然比查询所有字段快一些 -->
 	<select id="findById" resultType="Article">
 		select
-		a.id,a.title,a.keyword,a.content,a.text,a.category_id,a.author,a.create_time,u.nickname as author_name from
+		a.id,a.title,a.keyword,a.is_subject,a.content,a.text,a.category_id,a.author,a.create_time,u.nickname as author_name from
 		article a
 		left join user u
 		on u.username = a.author	
@@ -51,8 +55,8 @@
 	<insert id="add" useGeneratedKeys="true" keyProperty="id"
 		parameterType="Article">
 		insert into
-		article(title,keyword,content,text,category_id,author,create_time)
-		values(#{title},#{keyword},#{content},#{text},#{categoryId},#{author}, now())
+		article(title,keyword,is_subject,content,text,category_id,author,create_time)
+		values(#{title},#{keyword},#{isSubject},#{content},#{text},#{categoryId},#{author}, now())
 	</insert>
 
 	<!-- <update id="update" parameterType="Article"> update article set title 
@@ -61,7 +65,7 @@
 	<update id="update" parameterType="Article">
 		update article
 		<set>
-			text=#{text},category_id=#{categoryId},
+			text=#{text},category_id=#{categoryId},is_subject=#{isSubject},
 			<if test="title !=null and title != ''">
 				title =#{title},
 			</if>

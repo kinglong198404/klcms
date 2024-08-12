@@ -40,8 +40,8 @@ public interface ArticleDao {
 	 * @return
 	 */
 	List<Article> findByPage(@Param("categoryId") String categoryId,@Param("keyword") String keyword,
-			@Param("fromIndex") Integer fromIndex,@Param("pageSize") Integer pageSize);
+			@Param("isSubject") Integer isSubject, @Param("fromIndex") Integer fromIndex,@Param("pageSize") Integer pageSize);
 	
-	Integer getRows(@Param("categoryId") String categoryId,@Param("keyword") String keyword);
+	Integer getRows(@Param("categoryId") String categoryId,@Param("keyword") String keyword,@Param("isSubject") Integer isSubject);
 }
 

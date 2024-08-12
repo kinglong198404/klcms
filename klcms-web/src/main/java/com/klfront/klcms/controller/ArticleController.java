@@ -79,13 +79,14 @@ public class ArticleController {
 	@RequestMapping("/index.html")
 	public String index(ModelMap map, @RequestParam(value = "category", required = false) String category,
 			@RequestParam(value = "keyword", required = false) String keyword,
-			@RequestParam(value = "page", required = false) Integer page) {
+			@RequestParam(value = "page", required = false) Integer page,
+			@RequestParam(value = "isSubject", required = false) Integer isSubject) {
 		if (page == null) {
 			page = 1;
 		}
 		Integer pageIndex = page - 1;
 
-		List<Article> list = service.findByPage(category, keyword, pageIndex, pageSize);
+		List<Article> list = service.findByPage(category, keyword, isSubject, pageIndex, pageSize);
 		list.forEach(item -> {
 			String text = item.getText();
 			if (text == null) {
@@ -97,7 +98,7 @@ public class ArticleController {
 			}
 		});
 		
-		Integer pageCount = service.getPageCount(category, keyword, pageSize);
+		Integer pageCount = service.getPageCount(category, keyword, isSubject, pageSize);
 		List<Category> categories = catService.findAll();
 
 		if (null != category) {
@@ -105,12 +106,17 @@ public class ArticleController {
 		} else {
 			map.put("categoryId", "02");
 		}
-		if (keyword != null) {
+		if (null != keyword) {
 			map.put("keyword", keyword);
 			// 解决"C#"这样包含特殊字符的关键字，在分页链接中的编码需求
 			String encodeKeyword = UrlEncodeUtil.encodeURIComponent(keyword);
 			map.put("encodeKeyword", encodeKeyword);
 		}
+		if (null == isSubject) {
+			isSubject = 0;
+		}
+		map.put("getSubject", isSubject == 1);
+		map.put("subjectValue", isSubject);
 
 		map.put("articles", list);
 		map.put("page", page);
@@ -129,7 +135,7 @@ public class ArticleController {
 		}
 		Integer pageIndex = page - 1;
 
-		List<Article> list = service.findByPage(category, keyword, pageIndex, pageSize);
+		List<Article> list = service.findByPage(category, keyword, 0, pageIndex, pageSize);
 		list.forEach(item -> {
 			String text = item.getText();
 			if (text == null) {
@@ -140,7 +146,7 @@ public class ArticleController {
 				item.setText(text);
 			}
 		});
-		Integer pageCount = service.getPageCount(category, keyword, pageSize);
+		Integer pageCount = service.getPageCount(category, keyword, 0, pageSize);
 		List<Category> categories = catService.findAll();
 
 		if (null != category) {
@@ -313,7 +319,7 @@ public class ArticleController {
 	@ResponseBody
 	@RequestMapping("/articles")
 	public List<Article> articles() {
-		List<Article> list = service.findByPage(null, null, 0, 12);
+		List<Article> list = service.findByPage(null, null, 0, 0, 12);
 		return list;
 	}
 

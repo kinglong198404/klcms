@@ -47,6 +47,13 @@
 				</div>
 			</div>
 			<div class="form-group row">
+				<label class="control-label col-md-1">是否专题</label>
+				<div class="col-md-10 col-lg-7">
+				    <input class="form-control" type="text" name="isSubject"
+						value="${article.isSubject!}" />
+				</div>
+			</div>
+			<div class="form-group row">
 				<label class="control-label col-md-1" class="control-label col-md-1">类别</label>
 
 

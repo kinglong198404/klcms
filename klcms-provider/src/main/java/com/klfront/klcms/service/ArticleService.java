@@ -47,7 +47,7 @@ public interface ArticleService {
 	 * @param pageIndex 当前页 从0开始
 	 * @return
 	 */
-	List<Article> findByPage(String category,String keyword,Integer pageIndex,  Integer pageSize);
+	List<Article> findByPage(String category,String keyword,Integer isSubject, Integer pageIndex,  Integer pageSize);
 
 	/**
 	 * 获取满足指定条件的记录的页数
@@ -59,5 +59,5 @@ public interface ArticleService {
 	 * @param pageSize
 	 * @return
 	 */
-	public Integer getPageCount(String category, String keyword, Integer pageSize);
+	public Integer getPageCount(String category, String keyword, Integer isSubject, Integer pageSize);
 }

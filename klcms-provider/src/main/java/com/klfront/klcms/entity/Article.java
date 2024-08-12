@@ -30,6 +30,7 @@ public class Article implements Serializable {
 	private Long id;
 	private String title;
 	private String keyword;
+	private Integer isSubject;
 	private String content;
 	private String text;
 	private String categoryId;
