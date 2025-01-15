@@ -105,7 +105,19 @@
 				</configuration>
 			</plugin>
 
-			<!--web工程标配：添加spring-boot-maven-plugin插件之后，当运行“mvn package”进行打包时， 会打包成一个可以直接运行的 
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+			</plugin>
+			<plugin>
+		        <artifactId>maven-compiler-plugin</artifactId>
+		        <configuration>
+		          <source>1.8</source>
+		          <target>1.8</target>
+		        </configuration>
+		    </plugin>
+		    <!--web工程标配：添加spring-boot-maven-plugin插件之后，当运行“mvn package”进行打包时， 会打包成一个可以直接运行的 
 				JAR 文件，使用“java -jar”命令就可以直接运行 -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

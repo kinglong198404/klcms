@@ -88,30 +88,4 @@ public class DemoController {
 	//		map.put("age", "30");
 	//		return "index";
 	//	}
-
-	/**
-	 * freeemarker模板引擎演示
-	 * 返回视图名，则不用添加@ResponseBody注解
-	 * @param map
-	 * @return
-	 */
-	@RequestMapping("/freeemarker")
-	public String freeemarker(ModelMap map) {
-		map.put("hello", "<h1>你好 hello</h1>");
-		map.put("users", Arrays.asList("zhangsan", "lisi", "wangwu"));
-		return "test-freeemarker";
-	}
-
-	/**
-	 * thymeleaf模板引擎演示
-	 * 返回视图名，则不用添加@ResponseBody注解
-	 * @param map
-	 * @return
-	 */
-	@RequestMapping("/thymeleaf")
-	public String thymeleaf(ModelMap map) {
-		map.put("hello", "<h1>你好 thymeleaf</h1>");
-		map.put("users", Arrays.asList("zhangsan", "李四", "wangwu"));
-		return "test-thymeleaf";
-	}
 }

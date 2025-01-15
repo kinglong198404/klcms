@@ -75,26 +75,21 @@
 				<ul class="ulCategory">
 					<li><em>IDE</em></li>
 					<li><a href='https://www.jetbrains.com/idea/' target='_blank'>IDEA</a></li>
-					<li><a href='https://www.eclipse.org/' target='_blank'>Eclipse</a></li>
+					<li><a href='https://www.jetbrains.com/pycharm/' target='_blank'>PyCharm</a></li>
+					<li><a href='https://www.jetbrains.com/webstorm/' target='_blank'>WebStorm</a></li>
+					<li><a href='https://code.visualstudio.com/' target='_blank'>VSCode</a></li>
 					<li><a href='https://developer.android.com/studio/index.html'
 						target='_blank'>Android Studio</a></li>
-					<li><a href='http://maven.apache.org' target='_blank'>Maven</a></li>
-			
 
 					<li><em>前端</em></li>
-					<li><a href='http://www.cnblogs.com/ghostwu/p/7499237.html' target='_blank'>Webpack</a></li>
-					<li><a href='https://nodejs.org/en/' target='_blank'>Nodejs</a></li>
+					<li><a href='https://nodejs.org/en/' target='_blank'>NodeJs</a></li>
+					<li><a href='https://cn.vitejs.dev/guide/' target='_blank'>Vite</a></li>
 					<li><a href='https://reactjs.org/' target='_blank'>React</a></li>
 					<li><a href='https://v3.cn.vuejs.org/' target='_blank'>Vue3</a></li>
-					<li><a href='https://angular.io/' target='_blank'>Angular</a></li>
-					<li><a href='https://element.eleme.cn/#/zh-CN' target='_blank'>Element-UI</a></li>
+					<li><a href='https://element-plus.org/zh-CN/' target='_blank'>Element Plus</a></li>
 
 					<li><em>后端</em></li>
-					<li><a href='https://spring.io/projects' target='_blank'>Spring</a></li>
-					<li><a href='https://spring.io/projects/spring-boot/'
-						target='_blank'>Spring Boot</a></li>
-					<li><a href='https://getbootstrap.com/' target='_blank'>Spring
-							Cloud</a></li>
+					<li><a href='https://spring.io/projects/spring-cloud/' target='_blank'>Spring Cloud</a></li>
 					<li><a href='https://spring.io/projects/spring-security'
 						target='_blank'>Spring Security</a></li>
 					<li><a href='https://www.rabbitmq.com/getstarted.html'
@@ -102,8 +97,10 @@
 					<li><a href='https://developer.emqx.io/docs/broker/v3/cn/'
 						target='_blank'>EMQ</a></li>
 					<li><a href='https://www.springcloud.cc/apache-kafka-zhcn.html' target='_blank'>kafka文档</a></li>
-					
+					<li><a href='https://elasticsearch.bookhub.tech/intro/' target='_blank'>ElasticSearch文档</a></li>
+
 					<li><em>数据库</em></li>
+					<li><a href='https://www.mysql.com/' target='_blank'>MySQL数据库</a></li>
 					<li><a href='https://www.redisio.com/Getting-started.html' target='_blank'>Redis中文文档</a></li>
 					<li><a href='https://www.mongodb.com/' target='_blank'>MonngoDB</a></li>
 
@@ -113,7 +110,7 @@
 		<div class="clearfix"></div>
 		<hr />
 		<footer>
-			Copyright &copy;2014-${.now?string["yyyy"]}, i编程网-iprogram.com.cn,
+			Copyright &copy;2014-${.now?string["yyyy"]}, i编程网-blog.klfront.com,
 			All Rights Reserved
 			<a target="_blank" title="51la网站统计" href="https://v6.51.la/land/JvvsShXVrUjLrDFy"><img src="https://sdk.51.la/icon/1-1.png"></a>
 			<script>
