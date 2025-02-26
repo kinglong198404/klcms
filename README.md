@@ -1,5 +1,5 @@
 ### klcms工程
-本项目已部署到本人的个人网站iprogram.com.cn正式运行。
+本项目已部署到本人的个人网站blog.klfront.com正式运行。
 项目框架： SpringBoot + SpringMVC+ Mybatis + FreeMarker。
 
 ### 开发环境搭建
